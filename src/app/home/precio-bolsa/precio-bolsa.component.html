@@ -1,0 +1,70 @@
+<div class="todo">
+  <div class="contenido">
+    <mat-form-field appearance="fill" class="fecha">
+      <mat-label>Fecha de busqueda</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fechaInicio">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    
+    <br>
+
+    <div class="inputs mg-b15">
+      <div class="inputs-left">
+        <p>T. Cambio</p>
+        <input type="text" placeholder="0.00">
+  
+        <p>T. Cambio</p>
+        <input type="text" placeholder="0.00">
+
+        <p>T. Cambio</p>
+        <input type="text" placeholder="0.00">
+  
+        <p>T. Cambio</p>
+        <input type="text" placeholder="0.00">
+      </div>
+  
+      <div>
+        <p>T. Cambio</p>
+        <input type="text" placeholder="0.00">
+  
+        <p>T. Cambio</p>
+        <input type="text" placeholder="0.00">
+
+        <p>T. Cambio</p>
+        <input type="text" placeholder="0.00">
+  
+        <p>T. Cambio</p>
+        <input type="text" placeholder="0.00">
+      </div>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mg-b30">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="Certificacion" class="columna">
+        <th mat-header-cell *matHeaderCellDef> Certificacion </th>
+        <td mat-cell *matCellDef="let element"> {{element.Certificacion}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="Diferencial" class="columna">
+        <th mat-header-cell *matHeaderCellDef> Diferencial </th>
+        <td mat-cell *matCellDef="let element">
+          <input type="text" value="{{element.Diferencial}}">
+        </td>
+      </ng-container>
+    
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    
+
+    <button class="btn-principal">Guardar</button>
+  </div>
+</div>

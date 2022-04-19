@@ -1,0 +1,23 @@
+.todo{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.inputs{
+    display: flex;
+}
+
+.inputs input{
+    margin-bottom: 15px;
+    width: 85px;
+    text-align: center;
+}
+
+.inputs-left{
+    margin-right: 30px;
+}
+
+.mat-cell{
+    padding: 15px;
+}
