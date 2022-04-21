@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class PrecioBolsaComponent implements OnInit {
   public form!: FormGroup;
+
   public displayedColumns: string[] = ['Certificacion', 'Diferencial'];
   public dataSource = [
     {Certificacion: 'CONVENCIONAL', Diferencial: '0.00'},
@@ -16,9 +17,19 @@ export class PrecioBolsaComponent implements OnInit {
   ];
   
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder
+  ) 
+  { 
+    this.createForm();
+  }
 
   ngOnInit(): void {
   }
 
+  createForm(){
+    this.form = this.fb.group({
+      fecha: ''
+    });
+  }
 }

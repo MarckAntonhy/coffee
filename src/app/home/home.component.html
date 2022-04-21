@@ -11,7 +11,7 @@
         </div>
   
         <div>
-          <div class="sidenav-item" [routerLink]="['doc']">
+          <div class="sidenav-item" [routerLink]="['preciobolsa']">
             <div class="select-item">
             </div>
             <div class="sidenav-header">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="salir">
-          <button>Cerrar Sesión</button>
+          <button (click)="singOut()">Cerrar Sesión</button>
         </div>
 
       </mat-drawer>
@@ -31,8 +31,9 @@
       <!-- Lado derecho -->
       <div class="derecho">
         <section class="header">
-          <div>
-            <h1 class=""></h1>
+          <div class="user">
+            <img src="assets/img/svg/user-white.svg" alt="">
+            <p class="pd-l10">{{nameUser}}</p>
           </div>
   
           <div class="header-left">

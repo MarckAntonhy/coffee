@@ -8,8 +8,12 @@
     --main-color: rgb(21, 29, 47);
 }
 
-/* Componentes */
+html, body { height: 100%; }
 
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Componentes */
 input{
     padding: 10px;
     border-radius: 10px;
@@ -44,8 +48,18 @@ input{
     margin-bottom: 30px;
 }
 
+.pd-l10{
+    padding-left: 10px;
+}
+
+.pd-l15{
+    padding-left: 15px;
+}
+
 .bold{
     font-weight: bold;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.center{
+    text-align: center;
+}

@@ -6,6 +6,7 @@
 
 .inputs{
     display: flex;
+    justify-content: center;
 }
 
 .inputs input{
@@ -21,3 +22,14 @@
 .mat-cell{
     padding: 15px;
 }
+
+.input-table{
+    width: 45px;
+    text-align: center;
+}
+
+.fecha{
+    text-align: center;
+    width: 100%;
+}
+

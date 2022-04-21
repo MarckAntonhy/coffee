@@ -1,16 +1,26 @@
+<ngx-spinner 
+bdColor = "rgba(0, 0, 0, 0.8)" 
+size = "medium" 
+color = "#fff" 
+type = "square-jelly-box" 
+[fullScreen] = "true">
+<p style="color: white" > Loading... </p>
+</ngx-spinner>
+
 <div class="todo">
   <div class="login bg-white">
     <div class="login-contenido">
+      <form [formGroup]="form" (ngSubmit)="login()">
         <h1 class="mg-b30 title">Ingresar</h1>
-
-      <p class="bold mg-b5">Usuario</p>
-      <input type="text" id="usuario" name="usuario" placeholder="Ingresar usuario">
-
-      <p class="bold mg-b5">Contraseña</p>
-      <input type="password" id="password" name="password" placeholder="Ingresar Contraseña">
-
-      <button class="btn-principal mg-b15">Ingresar</button>
-        
+  
+        <p class="bold mg-b5">Usuario</p>
+        <input type="text" id="usuario" name="usuario" placeholder="Ingresar usuario" formControlName="usuario">
+  
+        <p class="bold mg-b5">Contraseña</p>
+        <input type="password" id="password" name="password" placeholder="Ingresar Contraseña" formControlName="contrasenia">
+  
+        <button class="btn-principal mg-b15" type="submit">Ingresar</button>
+      </form>
       <h1 class="footer">CHAR'LSOFT COFFEE 2022</h1>
     </div>
   </div>
