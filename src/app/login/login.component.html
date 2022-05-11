@@ -14,10 +14,10 @@ type = "square-jelly-box"
         <h1 class="mg-b30 title">Ingresar</h1>
   
         <p class="bold mg-b5">Usuario</p>
-        <input type="text" id="usuario" name="usuario" placeholder="Ingresar usuario" formControlName="usuario">
+        <input type="text" id="usuario" name="usuario" placeholder="Ingresar usuario" formControlName="usuario" class="input-form" [class.error]="validar('usuario')">
   
         <p class="bold mg-b5">Contraseña</p>
-        <input type="password" id="password" name="password" placeholder="Ingresar Contraseña" formControlName="contrasenia">
+        <input type="password" id="password" name="password" placeholder="Ingresar Contraseña" formControlName="contrasenia" class="input-form" [class.error]="validar('contrasenia')">
   
         <button class="btn-principal mg-b15" type="submit">Ingresar</button>
       </form>

@@ -14,11 +14,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 /* Componentes */
-input{
+
+.input-form{
     padding: 10px;
     border-radius: 10px;
     border: 0.5px solid;
     width: 100%;
+}
+
+.input-form.error{
+    border: 1px solid #FF0000;
 }
 
 .btn-principal{

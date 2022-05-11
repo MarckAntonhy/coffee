@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { FuntionsService } from '../services/funtions.service';
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   ) { 
 
     if(sFn.dataUser() != null){
-      this.router.navigate(['home'])
+      this.router.navigate(['home/preciobolsa'])
     }
 
     this.createForm();
@@ -34,12 +34,20 @@ export class LoginComponent implements OnInit {
 
   createForm(){
     this.form = this.fb.group({
-      usuario: [''],
-      contrasenia: ['']
+      usuario: ['', [Validators.required]],
+      contrasenia: ['', [Validators.required]]
     });
   }
 
+  validar(parametro: string){
+    return this.sFn.invalid(parametro, this.form);
+  }
+
   login(){
+    if(this.form.invalid){
+      return this.sFn.Empty_data(this.form);
+    }
+
     this.spinner.show();
 
     this.sUser.login(this.form.value).subscribe(response => {

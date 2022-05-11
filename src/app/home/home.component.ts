@@ -19,7 +19,13 @@ export class HomeComponent implements OnInit {
     private sFn: FuntionsService
   ) { 
     let data = sFn.dataUser();
+    
+    if(!data){
+      this.router.navigate(['']);
+    }
+
     this.nameUser = data.paterno +" " + data.nombres;
+
   }
 
   public showFiller: boolean = false;
