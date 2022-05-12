@@ -19,6 +19,10 @@
     margin-right: 30px;
 }
 
+.mat-header-cell{
+    padding: 0 35px;
+}
+
 .mat-cell{
     padding: 15px;
 }

@@ -27,7 +27,6 @@ export class PrecioBolsaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listar();
   }
 
   validar(parametro: string){
@@ -35,10 +34,10 @@ export class PrecioBolsaComponent implements OnInit {
   }
 
   createForm(){
-    let date = new Date();
+    // let date = new Date();
 
     this.form = this.fb.group({
-      fecha: [date, [Validators.required]],
+      fecha: [[Validators.required]],
       tCambio: ['', [Validators.required]],
       pBolsaNY: ['', [Validators.required]],
       pCoco: ['', [Validators.required]],
@@ -160,10 +159,13 @@ export class PrecioBolsaComponent implements OnInit {
       console.log(response);
       if(response.success){
         this.fn.mensajeInformacion("Datos guardados");
+
+        this.limpiar();
       }
       else{
         this.fn.mensajeError(response.message);
       }
+
       this.spinner.hide();
     }, error => {
       this.spinner.hide();
@@ -172,5 +174,12 @@ export class PrecioBolsaComponent implements OnInit {
 
     // console.log(data);
     // console.log(this.dataSource);
+  }
+
+
+  limpiar(){
+    this.form.reset();
+    this.form.patchValue({editar: false, Detalle: []});
+    this.dataSource = [];
   }
 }
